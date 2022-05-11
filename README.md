@@ -1,1 +1,24 @@
-Assignment
+# Developer set-up instructions:
+
+Tools used:
+1. openjdk18
+1. mvn
+
+To install the package into the local repository, for use as a dependency in other projects locally: `mvn clean install`
+
+Plugin used to generate the artifacts from the OpenAPI specification file:
+https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-maven-plugin
+To generate sources from the specification file: `mvn clean generate-sources`
+
+Other plugins used: https://github.com/mojohaus/build-helper-maven-plugin
+
+To run the application: `mvn spring-boot:run`
+
+To view the OpenAPI specification in a browser when the application is running, paste this in a browser: `http://localhost:8080/v3/api-docs/`
+
+To test the application from terminal, use this:
+```
+curl -X 'GET' \
+  'http://localhost:8080/rewards/1' \
+  -H 'accept: application/json'
+```  
