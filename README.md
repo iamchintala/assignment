@@ -3,7 +3,7 @@
 Tools used:
 1. openjdk18
 1. mvn
-1. springboo
+1. springboot
 1. openapi-generator-maven-plugin
 1. build-helper-maven-plugin
 1. springdoc-openapi
