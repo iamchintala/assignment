@@ -30,8 +30,8 @@ public class Rewards  implements Serializable {
   @JsonProperty("customerId")
   private String customerId;
 
-  @JsonProperty("purchaseAmoung")
-  private String purchaseAmoung;
+  @JsonProperty("purchaseAmount")
+  private String purchaseAmount;
 
   public Rewards rewardPoints(String rewardPoints) {
     this.rewardPoints = rewardPoints;
@@ -71,23 +71,23 @@ public class Rewards  implements Serializable {
     this.customerId = customerId;
   }
 
-  public Rewards purchaseAmoung(String purchaseAmoung) {
-    this.purchaseAmoung = purchaseAmoung;
+  public Rewards purchaseAmount(String purchaseAmount) {
+    this.purchaseAmount = purchaseAmount;
     return this;
   }
 
   /**
-   * Get purchaseAmoung
-   * @return purchaseAmoung
+   * Get purchaseAmount
+   * @return purchaseAmount
   */
   
-  @Schema(name = "purchaseAmoung", required = false)
-  public String getPurchaseAmoung() {
-    return purchaseAmoung;
+  @Schema(name = "purchaseAmount", required = false)
+  public String getPurchaseAmount() {
+    return purchaseAmount;
   }
 
-  public void setPurchaseAmoung(String purchaseAmoung) {
-    this.purchaseAmoung = purchaseAmoung;
+  public void setPurchaseAmount(String purchaseAmount) {
+    this.purchaseAmount = purchaseAmount;
   }
 
   @Override
@@ -101,12 +101,12 @@ public class Rewards  implements Serializable {
     Rewards rewards = (Rewards) o;
     return Objects.equals(this.rewardPoints, rewards.rewardPoints) &&
         Objects.equals(this.customerId, rewards.customerId) &&
-        Objects.equals(this.purchaseAmoung, rewards.purchaseAmoung);
+        Objects.equals(this.purchaseAmount, rewards.purchaseAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rewardPoints, customerId, purchaseAmoung);
+    return Objects.hash(rewardPoints, customerId, purchaseAmount);
   }
 
   @Override
@@ -115,7 +115,7 @@ public class Rewards  implements Serializable {
     sb.append("class Rewards {\n");
     sb.append("    rewardPoints: ").append(toIndentedString(rewardPoints)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-    sb.append("    purchaseAmoung: ").append(toIndentedString(purchaseAmoung)).append("\n");
+    sb.append("    purchaseAmount: ").append(toIndentedString(purchaseAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

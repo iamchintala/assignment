@@ -52,7 +52,7 @@ components:
           type: string
         customerId:
           type: string
-        purchaseAmoung:
+        purchaseAmount:
           type: string
     ErrorResponse:
       type: "object"
