@@ -30,9 +30,6 @@ You can use this for testing if you use httpie:
 http GET http://localhost:8080/rewards/1
 ```
 
-TODO:
-clean up maven file
-
 Sample response from the application:
 ```
 http GET http://localhost:8080/rewards/1
