@@ -2,8 +2,11 @@ package com.example.assignment.rewards.model;
 
 import java.net.URI;
 import java.util.Objects;
+import com.example.assignment.rewards.model.Reward;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
@@ -24,33 +27,18 @@ public class Rewards  implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  @JsonProperty("rewardPoints")
-  private String rewardPoints;
-
   @JsonProperty("customerId")
   private String customerId;
 
-  @JsonProperty("purchaseAmount")
-  private String purchaseAmount;
+  @JsonProperty("totalRewardPointsForPastThreeMonths")
+  private Integer totalRewardPointsForPastThreeMonths;
 
-  public Rewards rewardPoints(String rewardPoints) {
-    this.rewardPoints = rewardPoints;
-    return this;
-  }
+  @JsonProperty("totalPurchaseAmountForPastThreeMonths")
+  private Double totalPurchaseAmountForPastThreeMonths;
 
-  /**
-   * Get rewardPoints
-   * @return rewardPoints
-  */
-  
-  @Schema(name = "rewardPoints", required = false)
-  public String getRewardPoints() {
-    return rewardPoints;
-  }
-
-  public void setRewardPoints(String rewardPoints) {
-    this.rewardPoints = rewardPoints;
-  }
+  @JsonProperty("rewards")
+  @Valid
+  private List<Reward> rewards = null;
 
   public Rewards customerId(String customerId) {
     this.customerId = customerId;
@@ -71,23 +59,69 @@ public class Rewards  implements Serializable {
     this.customerId = customerId;
   }
 
-  public Rewards purchaseAmount(String purchaseAmount) {
-    this.purchaseAmount = purchaseAmount;
+  public Rewards totalRewardPointsForPastThreeMonths(Integer totalRewardPointsForPastThreeMonths) {
+    this.totalRewardPointsForPastThreeMonths = totalRewardPointsForPastThreeMonths;
     return this;
   }
 
   /**
-   * Get purchaseAmount
-   * @return purchaseAmount
+   * Get totalRewardPointsForPastThreeMonths
+   * @return totalRewardPointsForPastThreeMonths
   */
   
-  @Schema(name = "purchaseAmount", required = false)
-  public String getPurchaseAmount() {
-    return purchaseAmount;
+  @Schema(name = "totalRewardPointsForPastThreeMonths", required = false)
+  public Integer getTotalRewardPointsForPastThreeMonths() {
+    return totalRewardPointsForPastThreeMonths;
   }
 
-  public void setPurchaseAmount(String purchaseAmount) {
-    this.purchaseAmount = purchaseAmount;
+  public void setTotalRewardPointsForPastThreeMonths(Integer totalRewardPointsForPastThreeMonths) {
+    this.totalRewardPointsForPastThreeMonths = totalRewardPointsForPastThreeMonths;
+  }
+
+  public Rewards totalPurchaseAmountForPastThreeMonths(Double totalPurchaseAmountForPastThreeMonths) {
+    this.totalPurchaseAmountForPastThreeMonths = totalPurchaseAmountForPastThreeMonths;
+    return this;
+  }
+
+  /**
+   * Get totalPurchaseAmountForPastThreeMonths
+   * @return totalPurchaseAmountForPastThreeMonths
+  */
+  
+  @Schema(name = "totalPurchaseAmountForPastThreeMonths", required = false)
+  public Double getTotalPurchaseAmountForPastThreeMonths() {
+    return totalPurchaseAmountForPastThreeMonths;
+  }
+
+  public void setTotalPurchaseAmountForPastThreeMonths(Double totalPurchaseAmountForPastThreeMonths) {
+    this.totalPurchaseAmountForPastThreeMonths = totalPurchaseAmountForPastThreeMonths;
+  }
+
+  public Rewards rewards(List<Reward> rewards) {
+    this.rewards = rewards;
+    return this;
+  }
+
+  public Rewards addRewardsItem(Reward rewardsItem) {
+    if (this.rewards == null) {
+      this.rewards = new ArrayList<>();
+    }
+    this.rewards.add(rewardsItem);
+    return this;
+  }
+
+  /**
+   * Get rewards
+   * @return rewards
+  */
+  @Valid 
+  @Schema(name = "rewards", required = false)
+  public List<Reward> getRewards() {
+    return rewards;
+  }
+
+  public void setRewards(List<Reward> rewards) {
+    this.rewards = rewards;
   }
 
   @Override
@@ -99,23 +133,25 @@ public class Rewards  implements Serializable {
       return false;
     }
     Rewards rewards = (Rewards) o;
-    return Objects.equals(this.rewardPoints, rewards.rewardPoints) &&
-        Objects.equals(this.customerId, rewards.customerId) &&
-        Objects.equals(this.purchaseAmount, rewards.purchaseAmount);
+    return Objects.equals(this.customerId, rewards.customerId) &&
+        Objects.equals(this.totalRewardPointsForPastThreeMonths, rewards.totalRewardPointsForPastThreeMonths) &&
+        Objects.equals(this.totalPurchaseAmountForPastThreeMonths, rewards.totalPurchaseAmountForPastThreeMonths) &&
+        Objects.equals(this.rewards, rewards.rewards);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rewardPoints, customerId, purchaseAmount);
+    return Objects.hash(customerId, totalRewardPointsForPastThreeMonths, totalPurchaseAmountForPastThreeMonths, rewards);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rewards {\n");
-    sb.append("    rewardPoints: ").append(toIndentedString(rewardPoints)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
-    sb.append("    purchaseAmount: ").append(toIndentedString(purchaseAmount)).append("\n");
+    sb.append("    totalRewardPointsForPastThreeMonths: ").append(toIndentedString(totalRewardPointsForPastThreeMonths)).append("\n");
+    sb.append("    totalPurchaseAmountForPastThreeMonths: ").append(toIndentedString(totalPurchaseAmountForPastThreeMonths)).append("\n");
+    sb.append("    rewards: ").append(toIndentedString(rewards)).append("\n");
     sb.append("}");
     return sb.toString();
   }

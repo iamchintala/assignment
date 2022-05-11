@@ -20,12 +20,6 @@ paths:
           required: true
           schema:
             type: string
-            enum:
-            - "1"
-            - "2"
-            - "3"
-            - "4"
-            - "5"            
       responses:
         200:
           description: "successful operation"
@@ -45,15 +39,30 @@ paths:
           $ref: '#/components/schemas/ErrorResponse'          
 components:
   schemas:
-    Rewards:
+    Reward:
       type: "object"
       properties:
         rewardPoints:
-          type: string
+          type: integer
+        purchaseAmount:
+          type: number
+          format: double
+        month:
+          type: string	  
+    Rewards:
+      type: "object"
+      properties:
         customerId:
           type: string
-        purchaseAmount:
-          type: string
+        totalRewardPointsForPastThreeMonths:
+          type: integer
+        totalPurchaseAmountForPastThreeMonths:
+          type: number
+          format: double
+        rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reward'
     ErrorResponse:
       type: "object"
       properties:

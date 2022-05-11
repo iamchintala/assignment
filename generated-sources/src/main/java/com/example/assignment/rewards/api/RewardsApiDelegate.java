@@ -40,7 +40,7 @@ public interface RewardsApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"customerId\" : \"customerId\", \"rewardPoints\" : \"rewardPoints\", \"purchaseAmount\" : \"purchaseAmount\" }";
+                    String exampleString = "{ \"totalPurchaseAmountForPastThreeMonths\" : 6.027456183070403, \"customerId\" : \"customerId\", \"totalRewardPointsForPastThreeMonths\" : 0, \"rewards\" : [ { \"month\" : \"month\", \"rewardPoints\" : 1, \"purchaseAmount\" : 5.962133916683182 }, { \"month\" : \"month\", \"rewardPoints\" : 1, \"purchaseAmount\" : 5.962133916683182 } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

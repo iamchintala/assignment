@@ -65,7 +65,7 @@ public interface RewardsApi {
         produces = { "application/json" }
     )
     default ResponseEntity<Rewards> getRewardsByCustomerId(
-        @Parameter(name = "customerId", description = "customer id", required = true, schema = @Schema(description = "", allowableValues = { "1", "2", "3", "4", "5" })) @PathVariable("customerId") String customerId
+        @Parameter(name = "customerId", description = "customer id", required = true, schema = @Schema(description = "")) @PathVariable("customerId") String customerId
     ) {
         return getDelegate().getRewardsByCustomerId(customerId);
     }

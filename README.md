@@ -3,6 +3,7 @@
 Tools used:
 1. openjdk18
 1. mvn
+1. springboo
 1. openapi-generator-maven-plugin
 1. build-helper-maven-plugin
 1. springdoc-openapi
@@ -33,3 +34,38 @@ TODO:
 set up data
 set up test cases
 clean up maven file
+move magic numbers into property files
+
+Sample response from the application:
+```
+http GET http://localhost:8080/rewards/1
+HTTP/1.1 200 
+Connection: keep-alive
+Content-Type: application/json
+Date: Wed, 11 May 2022 18:55:48 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "customerId": "1",
+    "rewards": [
+        {
+            "month": "APRIL",
+            "purchaseAmount": 120.0,
+            "rewardPoints": 90
+        },
+        {
+            "month": "MARCH",
+            "purchaseAmount": 130.0,
+            "rewardPoints": 110
+        },
+        {
+            "month": "FEBRUARY",
+            "purchaseAmount": 140.0,
+            "rewardPoints": 130
+        }
+    ],
+    "totalPurchaseAmountForPastThreeMonths": 390.0,
+    "totalRewardPointsForPastThreeMonths": 330
+}
+```
