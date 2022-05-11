@@ -30,6 +30,8 @@ You can use this for testing if you use httpie:
 http GET http://localhost:8080/rewards/1
 ```
 
+Valid customerIds that would give you results: 1,2,3,4
+
 Sample response from the application:
 ```
 http GET http://localhost:8080/rewards/1

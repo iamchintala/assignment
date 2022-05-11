@@ -103,6 +103,21 @@ public class RewardsApiDelegateImpl implements RewardsApiDelegate {
 		transactions.add(Transaction.builder().customerId("1").amountSpent(130).dateOfTransaction(LocalDate.of(2022, 3, 1)).build());
 		transactions.add(Transaction.builder().customerId("1").amountSpent(140).dateOfTransaction(LocalDate.of(2022, 2, 1)).build());
 		
+		transactions.add(Transaction.builder().customerId("2").amountSpent(80).dateOfTransaction(LocalDate.of(2022, 5, 1)).build());
+		transactions.add(Transaction.builder().customerId("2").amountSpent(90).dateOfTransaction(LocalDate.of(2022, 4, 1)).build());
+		transactions.add(Transaction.builder().customerId("2").amountSpent(100).dateOfTransaction(LocalDate.of(2022, 3, 1)).build());
+		transactions.add(Transaction.builder().customerId("2").amountSpent(110).dateOfTransaction(LocalDate.of(2022, 2, 1)).build());
+		
+		transactions.add(Transaction.builder().customerId("3").amountSpent(160).dateOfTransaction(LocalDate.of(2022, 5, 1)).build());
+		transactions.add(Transaction.builder().customerId("3").amountSpent(170).dateOfTransaction(LocalDate.of(2022, 4, 1)).build());
+		transactions.add(Transaction.builder().customerId("3").amountSpent(180).dateOfTransaction(LocalDate.of(2022, 3, 1)).build());
+		transactions.add(Transaction.builder().customerId("3").amountSpent(190).dateOfTransaction(LocalDate.of(2022, 2, 1)).build());
+		
+		transactions.add(Transaction.builder().customerId("4").amountSpent(200).dateOfTransaction(LocalDate.of(2022, 5, 1)).build());
+		transactions.add(Transaction.builder().customerId("4").amountSpent(210).dateOfTransaction(LocalDate.of(2022, 4, 1)).build());
+		transactions.add(Transaction.builder().customerId("4").amountSpent(220).dateOfTransaction(LocalDate.of(2022, 3, 1)).build());
+		transactions.add(Transaction.builder().customerId("4").amountSpent(230).dateOfTransaction(LocalDate.of(2022, 2, 1)).build());
+		
 		return transactions;
 	}
 }
