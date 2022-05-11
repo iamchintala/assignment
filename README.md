@@ -31,10 +31,7 @@ http GET http://localhost:8080/rewards/1
 ```
 
 TODO:
-set up data
-set up test cases
 clean up maven file
-move magic numbers into property files
 
 Sample response from the application:
 ```
