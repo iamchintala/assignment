@@ -22,4 +22,14 @@ To test the application from terminal, use this command:
 curl -X 'GET' \
   'http://localhost:8080/rewards/1' \
   -H 'accept: application/json'
-```  
+```
+
+You can use this for testing if you use httpie:
+```
+http GET http://localhost:8080/rewards/1
+```
+
+TODO:
+set up data
+set up test cases
+clean up maven file
